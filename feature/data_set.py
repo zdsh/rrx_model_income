@@ -5,18 +5,28 @@ sys.setdefaultencoding('utf-8')
 
 from utils import mongo_connect
 from feature.xw_apply import xw_apply_feature
+from feature.pbc import pbc_feature
 
 def get_feature_dic(user):
     feature={}
     xw_apply_info={}
     pbc_info={}
+    #小微申请feature
     if 'XW' in user:
         xw_apply_info=user['XW']
+    #央行征信feature
     if 'PBC' in user:
         pbc_info=user['PBC']
     #print(xw_apply_info)
-    feature=xw_apply_feature.get_xw_apply_feature_dic(xw_apply_info)
-    #print(feature)
+    xw_feature=xw_apply_feature.get_xw_apply_feature_dic(xw_apply_info)
+    pbc_featue = pbc_feature.get_pbc_feature_dic(pbc_info)
+    for k in xw_feature.keys():
+        feature[k]=xw_feature[k]
+
+    for k in pbc_featue.keys():
+        feature[k]=pbc_featue[k]
+
+    print(feature)
     return feature
 
 
