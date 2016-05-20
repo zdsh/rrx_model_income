@@ -30,6 +30,7 @@ def get_feature_dic(user):
     return feature
 
 
+
 if __name__ == '__main__':
     db=mongo_connect.get_mongo_db('rrx_xwdb', '10.10.159.15', 27017, 'rrx_xw', 'rrx_xw_pass')
     collection = db['xw_users']

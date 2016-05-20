@@ -6,6 +6,7 @@
 import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
+sys.path.append('/Users/liben/PycharmProjects/Model_Analysis/rrx_model_income')
 
 from utils import mongo_connect
 from feature.pbc import pbc_feature
@@ -14,7 +15,7 @@ def get_apply_list_from_file(file_name,index,separator,hashead=False):
     file  = open(file_name,'r')
     apply_list = []
     if hashead==True:
-        head = file.readline()
+        file.readline()
         line = file.readline()
         while line:
             datas = line.split('\n')[0].split(separator)
@@ -61,14 +62,24 @@ def extract_credit_amount_feature(apply_list,out_file_name):
     print count
 
 
-
-if __name__=='__main__':
-
-    apply_file = 'accumulationfund_raw_data'
-    out_file = 'credit_data/accumulationfund_credit_mount'
+def extract_data():
+    #提取信用卡额度信息
+    apply_file = 'salary_raw_data'
+    out_file = 'credit_data/salary_credit_amount'
+    # apply_file = 'accumulationfund_raw_data'
+    # out_file = 'credit_data/accumulationfund_credit_mount'
     index = 0
     separator='\t'
     hashead = True
     apply_list = get_apply_list_from_file(apply_file,index,separator,hashead)
     extract_credit_amount_feature(apply_list,out_file)
+
+#分析信用卡额度和收入的关系
+def analysis_credit_income():
+    pass
+
+if __name__=='__main__':
+    pass
+
+
 
