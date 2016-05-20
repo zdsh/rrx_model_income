@@ -7,6 +7,7 @@ from utils import mongo_connect
 from feature.xw_apply import xw_apply_feature
 from feature.pbc import pbc_feature
 
+
 def get_feature_dic(user):
     feature={}
     xw_apply_info={}

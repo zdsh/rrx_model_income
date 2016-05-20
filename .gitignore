@@ -16,6 +16,7 @@ sv
 *.rar
 income/
 model/
+data/
 target/
 .classpath
 .metadata
