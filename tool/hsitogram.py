@@ -17,8 +17,8 @@ def plot_histogram(data, title, xlabel='x', ylabel='y'):
     for k in x:
         y.append(data[k])
         t_x.append(str(k))
-    #print(data)
-    #data=np.array(data)
+    #print(model)
+    #model=np.array(model)
     print(x)
     print(y)
     bar_width=0.15
