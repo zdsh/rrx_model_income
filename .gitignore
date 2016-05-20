@@ -14,10 +14,10 @@ sv
 *.POMDP
 *.pomdp
 *.rar
-income/
-model/
-data/
-target/
+income
+model
+data
+target
 .classpath
 .metadata
 .project
