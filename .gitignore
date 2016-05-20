@@ -3,7 +3,11 @@ sv
 *.7z
 *.log
 *.mat
+*.png
 *.jpg
+*.pdf
+*.model
+*.txt
 *.diff
 ~*
 *.csv

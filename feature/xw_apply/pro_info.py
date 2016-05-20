@@ -16,11 +16,14 @@ def get_pro_info_feature(pro_info):
         company_add_province=pro_info['COMPANYADDRESSPROVINCE'].encode('utf-8')
     if 'COMPANYADDRESSCITY' in pro_info:
         company_add_city=pro_info['COMPANYADDRESSCITY'].encode('utf-8')
-    
+    if 'COMPANYTYPE' in pro_info:
+        if pro_info['COMPANYTYPE'].strip()  not in ['', None]:
+            company_type=int(pro_info['COMPANYTYPE'].strip())
+            
     #print(company_add_province)
     #print(company_add_city)
     feature['city_level']=city_level.get_city_level(company_add_city)
     feature['region']=province_region.get_province_region(company_add_province)
-
+    feature['company_type']=company_type
     #print(feature)
     return feature
