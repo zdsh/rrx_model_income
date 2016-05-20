@@ -14,9 +14,7 @@ import numpy as np
 
 
 def get_credit_info_feature(credit_card_detail):
-
    pass
 
 if __name__ == '__main__':
-
     pass
