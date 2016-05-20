@@ -14,8 +14,8 @@ sv
 *.POMDP
 *.pomdp
 *.rar
-income
 model
+local
 data
 target
 .classpath
