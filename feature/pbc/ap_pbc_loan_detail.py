@@ -24,9 +24,9 @@ def get_loan_info_feature(loan_detail):
                 loanType = per_loan['TYPE']
             #获取贷款额度
             if 'AMOUNT' in per_loan.keys():
-                LoanAmount = per_loan['AMOUNT']
+                LoanAmount = int(per_loan['AMOUNT'])
             if 'STATUS' in per_loan.keys():
-                loanStatus = per_loan['STATUS']
+                loanStatus = int(per_loan['STATUS'])
             #获取房贷额度(暂定获取最后一条记录,以后根据规则修改)
             if loanType in ['11','12','13']:
                 return_feature['HouseLoanAmount'] = LoanAmount

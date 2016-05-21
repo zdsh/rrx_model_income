@@ -49,5 +49,5 @@ if __name__ == '__main__':
         ]
     for user in collection.find({'_id':{'$in':applycode_list}}):
         featue = get_feature_dic(user)
-        print user
+        print user['_id'],featue
         #break

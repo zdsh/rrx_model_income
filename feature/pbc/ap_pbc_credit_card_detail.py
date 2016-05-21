@@ -37,10 +37,10 @@ def get_credit_card_info_feature(credit_card_detail):
 
         myarray = np.array(amount_list)
         if len(amount_list):
-            feature['AmountMean'] = np.mean(myarray)
-            feature['AmountMedian'] = np.median(myarray)
-            feature['AmountMax'] = np.max(myarray)
-            feature['AmountMin'] = np.min(myarray)
+            feature['AmountMean'] = int(np.mean(myarray))
+            feature['AmountMedian'] = int(np.median(myarray))
+            feature['AmountMax'] = int(np.max(myarray))
+            feature['AmountMin'] = int(np.min(myarray))
     #print feature
     return feature
 
